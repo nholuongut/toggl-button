@@ -1,0 +1,344 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&subset=cyrillic,latin-ext);
+@import './edit-form.css';
+
+html, body {
+  min-height: 550px;
+}
+
+body {
+  font-size: 14px;
+  overflow: hidden;
+  margin: 0px;
+  padding: 0px;
+  background: white;
+  font-family: Roboto, Helvetica, sans-serif;
+  background: white;
+  width: 470px;
+  -webkit-font-smoothing: antialiased;
+}
+
+.view {
+  position: relative;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  padding: 20px 20px 12px;
+  display: none;
+}
+#login-view {
+  margin-bottom: 48px;
+  padding: 0px;
+}
+
+.forgot-link {
+  height: 33px;
+  line-height: 33px;
+  vertical-align: middle;
+  text-decoration: none;
+  color: #aaa;
+  float: left;
+  display: block;
+  font-size: 12px;
+}
+.forgot-link:hover {
+  color: #767676;
+}
+.form-row {
+  display: flex;
+  margin: 0 0 15px;
+  padding: 0;
+}
+.form-row label {
+  display: block;
+  font-size: 13px;
+  height: 20px;
+}
+p.form-row.first {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.text-input {
+  background: #f5f5f5;
+  border: 1px solid #f3f3f3;
+  border-radius: 8px;
+  outline: none;
+  padding: 0 10px;
+  height: 36px;
+  font-size: 14px;
+  flex: 1;
+}
+#entry_project {
+  height: 25px;
+  width: 230px;
+}
+.check {
+  font-size: 13px;
+  height: 30px;
+}
+.btn-small {
+  font-size: 0.7em;
+  text-transform: uppercase;
+  padding: 10px 14px 8px;
+  border: 1px solid #63b618;
+  color: white;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
+  font-weight: bold;
+  font-size: 12px;
+  display: inline-block;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+  background-color: #8dcc35;
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#8dcc35),
+    to(#47a204)
+  );
+  background-image: -webkit-linear-gradient(top, #8dcc35, #47a204);
+  background-image: -moz-linear-gradient(top, #8dcc35, #47a204);
+  background-image: -o-linear-gradient(top, #8dcc35, #47a204);
+  background-image: linear-gradient(to bottom, #8dcc35, #47a204);
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+.btn {
+  background-color: #f8f8f8;
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#f8f8f8),
+    to(#e4e4e4)
+  );
+  background-image: -webkit-linear-gradient(top, #f8f8f8, #e4e4e4);
+  background-image: -moz-linear-gradient(top, #f8f8f8, #e4e4e4);
+  background-image: -o-linear-gradient(top, #f8f8f8, #e4e4e4);
+  background-image: linear-gradient(to bottom, #f8f8f8, #e4e4e4);
+}
+.primary-btn {
+  font-weight: 400;
+  font-size: 14px;
+  width: 80px;
+  height: 34px;
+  line-height: 34px;
+  vertical-align: middle;
+  color: white;
+  display: inline-block;
+  background-color: #80d364;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  cursor: pointer;
+  font-family: inherit;
+  text-align: center;
+  padding: 0;
+}
+.primary-btn:hover {
+  background-color: #77c45d;
+}
+#error,
+.errorbox {
+  background: #ffdada;
+  text-align: center;
+  color: #d41a28;
+  font-weight: bold;
+  -webkit-border-radius: 3px 3px 0 0;
+  border-radius: 3px 3px 0 0;
+  padding: 10px;
+  display: none;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.right {
+  float: right;
+}
+.left {
+  float: left;
+}
+.header {
+  box-sizing: border-box; /* oh no, we don't already have a reset :facepalm: */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  list-style: none;
+  width: 100%;
+  height: 40px;
+  margin: 0;
+  padding: .25rem .8rem;
+
+  background: #323232;
+}
+.header > *:first-child {
+  flex: 1;
+}
+.header li:not(.icon) {
+  cursor: pointer;
+}
+
+.header .sync-data {
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBmaWxsPSIjY2VjZWNlIiBkPSJNMTIgNFYxTDggNWw0IDRWNmMzLjMxIDAgNiAyLjY5IDYgNiAwIDEuMDEtLjI1IDEuOTctLjcgMi44bDEuNDYgMS40NkMxOS41NCAxNS4wMyAyMCAxMy41NyAyMCAxMmMwLTQuNDItMy41OC04LTgtOHptMCAxNGMtMy4zMSAwLTYtMi42OS02LTYgMC0xLjAxLjI1LTEuOTcuNy0yLjhMNS4yNCA3Ljc0QzQuNDYgOC45NyA0IDEwLjQzIDQgMTJjMCA0LjQyIDMuNTggOCA4IDh2M2w0LTQtNC00djN6Ii8+PHBhdGggZD0iTTAgMGgyNHYyNEgweiIgZmlsbD0ibm9uZSIvPjwvc3ZnPg==);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 24px;
+  height: 24px;
+  margin-right: .6rem;
+}
+
+.header .exit-to-app {
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMCAwaDI0djI0SDB6IiBmaWxsPSJub25lIi8+PHBhdGggZmlsbD0iI2NlY2VjZSIgZD0iTTE5IDE5SDVWNWg3VjNINWMtMS4xMSAwLTIgLjktMiAydjE0YzAgMS4xLjg5IDIgMiAyaDE0YzEuMSAwIDItLjkgMi0ydi03aC0ydjd6TTE0IDN2MmgzLjU5bC05LjgzIDkuODMgMS40MSAxLjQxTDE5IDYuNDFWMTBoMlYzaC03eiIvPjwvc3ZnPg==);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 24px;
+  height: 24px;
+  margin-right: .6rem;
+}
+
+.header .cog {
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDIwIDIwIj48cGF0aCBmaWxsPSJub25lIiBkPSJNMCAwaDIwdjIwSDBWMHoiLz48cGF0aCBmaWxsPSIjY2VjZWNlIiBkPSJNMTUuOTUgMTAuNzhjLjAzLS4yNS4wNS0uNTEuMDUtLjc4cy0uMDItLjUzLS4wNi0uNzhsMS42OS0xLjMyYy4xNS0uMTIuMTktLjM0LjEtLjUxbC0xLjYtMi43N2MtLjEtLjE4LS4zMS0uMjQtLjQ5LS4xOGwtMS45OS44Yy0uNDItLjMyLS44Ni0uNTgtMS4zNS0uNzhMMTIgMi4zNGMtLjAzLS4yLS4yLS4zNC0uNC0uMzRIOC40Yy0uMiAwLS4zNi4xNC0uMzkuMzRsLS4zIDIuMTJjLS40OS4yLS45NC40Ny0xLjM1Ljc4bC0xLjk5LS44Yy0uMTgtLjA3LS4zOSAwLS40OS4xOGwtMS42IDIuNzdjLS4xLjE4LS4wNi4zOS4xLjUxbDEuNjkgMS4zMmMtLjA0LjI1LS4wNy41Mi0uMDcuNzhzLjAyLjUzLjA2Ljc4TDIuMzcgMTIuMWMtLjE1LjEyLS4xOS4zNC0uMS41MWwxLjYgMi43N2MuMS4xOC4zMS4yNC40OS4xOGwxLjk5LS44Yy40Mi4zMi44Ni41OCAxLjM1Ljc4bC4zIDIuMTJjLjA0LjIuMi4zNC40LjM0aDMuMmMuMiAwIC4zNy0uMTQuMzktLjM0bC4zLTIuMTJjLjQ5LS4yLjk0LS40NyAxLjM1LS43OGwxLjk5LjhjLjE4LjA3LjM5IDAgLjQ5LS4xOGwxLjYtMi43N2MuMS0uMTguMDYtLjM5LS4xLS41MWwtMS42Ny0xLjMyek0xMCAxM2MtMS42NSAwLTMtMS4zNS0zLTNzMS4zNS0zIDMtMyAzIDEuMzUgMyAzLTEuMzUgMy0zIDN6Ii8+PC9zdmc+);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 24px;
+  height: 24px;
+}
+
+.views > div,
+.views > ul {
+  display: none;
+}
+
+.header[data-view='menu'] ~ .views #menu,
+.header[data-view='login-view'] ~ .views #login-view,
+.header[data-view='revoked-workspace'] ~ .views #revoked-workspace,
+.header[data-view='toggl-button-entry-form'] ~ .views #toggl-button-entry-form {
+  display: block !important;
+}
+
+.header[data-view='login-view'] {
+  display: none;
+}
+
+.header[data-view='toggl-button-entry-form'] ~ .views #toggl-button-entry-form {
+  display: flex !important;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 5rem;
+}
+
+.running,
+.stopped {
+  display: none;
+}
+
+#menu {
+  background: #fafbfc; /* colors.offWhite */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  min-width: 100%;
+  font-weight: 400;
+}
+
+#menu li > button {
+  width: 100%;
+  padding: 8px 36px 8px 30px;
+  font-weight: 400;
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+  text-align: left;
+  width: 200px;
+  font-size: 11px;
+}
+button:focus {
+  outline: none;
+}
+hr {
+  border: none;
+  margin: 0 5px;
+  border-top: 1px solid #ddd;
+}
+.error {
+  display: none;
+  background: #f30c16;
+  padding: 10px 5px;
+  color: white;
+}
+
+.error {
+  overflow: hidden;
+  max-height: 0px;
+  transition: max-height 300ms ease-in-out;
+  display: block;
+  padding: 0 30px;
+  line-height: 20px;
+}
+
+.error.show {
+  max-height: 100px;
+}
+
+/* Entry form styles */
+
+.views #toggl-button-entry-form {
+  /* Bigger width in the toolbar popup. It'll be changed completely in "Timer popup" issue. */
+  width: 100%;
+  height: 100%;
+}
+
+.views #toggl-button-edit-form {
+  /* Bigger width in the toolbar popup. It'll be changed completely in "Timer popup" issue. */
+  position: relative;
+  margin: 0 auto;
+  width: auto !important;
+}
+
+
+
+/** FIREFOX **/
+.ff #toggl-button-update:focus {
+  box-shadow: 1px 1px 5px #83bffc;
+}
+
+.ff #toggl-button-edit-form #toggl-button-duration {
+  padding: 0;
+}
+
+/** FIREFOX END **/
+
+.toggl-button-hidden {
+  display: none;
+}
+
+#menu .tb-project-bullet {
+  margin-left: 10px;
+}
+
+/** Revoked Workspace **/
+#revoked-workspace {
+  min-height: 146px;
+}
+
+#revoked-workspace > div {
+  color: #a3a3a3;
+  font-weight: 200;
+  margin-bottom: 12px;
+}
+
+#revoked-workspace form > p {
+  display: flex;
+}
+
+#revoked-workspace input {
+  flex: 1;
+}
+
+#revoked-workspace .primary-btn {
+  width: 100%;
+}
